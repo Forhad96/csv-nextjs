@@ -60,7 +60,7 @@ export default function UploadCSV() {
         <div className="flex flex-col items-center justify-center space-y-4">
           <label
             htmlFor="file-upload"
-            className="w-full flex items-center justify-center px-6 py-3 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+            className="w-full flex items-center justify-center px-6 py-3 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer  hover:bg-gray-600 transition-colors"
           >
             <span className="">Choose a CSV file or drag it here</span>
             <input
