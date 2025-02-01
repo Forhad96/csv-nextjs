@@ -24,9 +24,13 @@ export async function POST(request: Request) {
       stream
         .pipe(csvParser())
         .on('data', (row: CsvRecord) => {
-            // console.log(row);
-          records.push(row);
-        })
+            // Replace '�' with '-' in each field of the row
+            const cleanedRow: CsvRecord = {};
+            for (const key in row) {
+              cleanedRow[key] = row[key].replace(/�/g, '-');
+            }
+            records.push(cleanedRow);
+          })
         .on('end', () => {
           resolve(NextResponse.json({ data: records }));
         })
